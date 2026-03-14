@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>张畅佳 · 个人简介</title>
+    <!-- Font Awesome 6 (免费版) 图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            background: linear-gradient(145deg, #1a0b2e 0%, #0b1f3a 80%, #0a2a44 100%);
+            background-attachment: fixed;
+            position: relative;
+        }
+
+        .glass-card {
+            max-width: 650px;
+            width: 100%;
+            background: rgba(20, 30, 45, 0.25);
+            backdrop-filter: blur(12px) saturate(180%);
+            -webkit-backdrop-filter: blur(12px) saturate(180%);
+            border-radius: 2.5rem;
+            padding: 2.5rem 2rem;
+            box-shadow: 0 30px 50px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.08) inset;
+            color: rgba(245, 245, 255, 0.95);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            position: relative;
+            backdrop-filter: blur(10px);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 45px 70px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.2) inset;
+        }
+
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            20% { transform: translateX(-7px) rotate(-1deg); }
+            40% { transform: translateX(7px) rotate(1deg); }
+            60% { transform: translateX(-5px) rotate(-0.5deg); }
+            80% { transform: translateX(5px) rotate(0.5deg); }
+            100% { transform: translateX(0); }
+        }
+        .glass-card.shake {
+            animation: shake 0.4s ease-in-out;
+        }
+
+        .typewriter-title {
+            font-size: 2.8rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            margin-bottom: 1.2rem;
+            text-shadow: 0 2px 10px rgba(0, 200, 255, 0.3);
+            border-right: 3px solid rgba(210, 230, 255, 0.8);
+            white-space: nowrap;
+            overflow: hidden;
+            display: inline-block;
+            padding-right: 5px;
+            animation: blinkCursor 0.8s step-end infinite;
+        }
+
+        @keyframes blinkCursor {
+            from, to { border-color: transparent; }
+            50% { border-color: rgba(210, 230, 255, 0.8); }
+        }
+
+        .avatar-wrapper {
+            display: flex;
+            justify-content: center;
+            margin: 0.5rem 0 2rem 0;
+        }
+
+        .avatar-icon {
+            font-size: 5.5rem;
+            color: rgba(220, 240, 255, 0.9);
+            filter: drop-shadow(0 8px 14px rgba(0, 30, 60, 0.7));
+            transition: transform 0.2s ease;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            padding: 0.2rem;
+            border: 2px solid rgba(255, 255, 255, 0.25);
+        }
+
+        .avatar-icon:hover {
+            transform: scale(1.02);
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            padding: 0.9rem 1.2rem;
+            margin-bottom: 0.8rem;
+            background: rgba(10, 20, 35, 0.25);
+            border-radius: 3rem;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(2px);
+            font-size: 1.2rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp 0.6s ease forwards;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background 0.2s, border-color 0.2s;
+        }
+
+        .info-item:hover {
+            background: rgba(40, 60, 90, 0.4);
+            border-color: rgba(255, 255, 255, 0.25);
+        }
+
+        @keyframes fadeUp {
+            0% { opacity: 0; transform: translateY(25px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .info-item i {
+            width: 2rem;
+            font-size: 1.6rem;
+            text-align: center;
+            color: #aac8ff;
+            filter: drop-shadow(0 2px 4px #003366);
+        }
+
+        .info-item span {
+            flex: 1;
+            font-weight: 400;
+            word-break: break-word;
+            color: #f0f4ff;
+        }
+
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+        .delay-5 { animation-delay: 0.5s; }
+        .delay-6 { animation-delay: 0.6s; }
+        .delay-7 { animation-delay: 0.7s; }
+        .delay-8 { animation-delay: 0.8s; }
+
+        .note-for-image {
+            text-align: center;
+            font-size: 0.8rem;
+            opacity: 0.6;
+            margin-top: 1rem;
+            border-top: 1px dashed rgba(255,255,255,0.2);
+            padding-top: 1rem;
+            letter-spacing: 1px;
+        }
+        .note-for-image i {
+            margin-right: 6px;
+        }
+
+        @media (max-width: 500px) {
+            .glass-card {
+                padding: 1.8rem 1.2rem;
+                border-radius: 2rem;
+            }
+            .typewriter-title {
+                font-size: 2.2rem;
+            }
+            .info-item {
+                font-size: 1rem;
+                padding: 0.7rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="glass-card" id="profileCard">
+        <h1 class="typewriter-title" id="typewriter"></h1>
+        <div class="avatar-wrapper fade-item delay-1">
+            <i class="fas fa-user-astronaut avatar-icon"></i>
+        </div>
+        <div class="info-item delay-2">
+            <i class="fas fa-user"></i>
+            <span><strong>姓名</strong> 张畅佳</span>
+        </div>
+        <div class="info-item delay-3">
+            <i class="fas fa-graduation-cap"></i>
+            <span><strong>学校</strong> 广东工业大学</span>
+        </div>
+        <div class="info-item delay-4">
+            <i class="fas fa-calendar-alt"></i>
+            <span><strong>年龄</strong> 19岁</span>
+        </div>
+        <div class="info-item delay-5">
+            <i class="fas fa-map-marker-alt"></i>
+            <span><strong>家乡</strong> 潮汕 · 揭阳</span>
+        </div>
+        <div class="info-item delay-6">
+            <i class="fas fa-heart"></i>
+            <span><strong>爱好</strong> 运动、尝试新鲜事物</span>
+        </div>
+        <div class="info-item delay-7">
+            <i class="fas fa-laptop-code"></i>
+            <span><strong>技能</strong> Blender (3D建模) · 视频剪辑</span>
+        </div>
+        <div class="info-item delay-8">
+            <i class="fas fa-utensils"></i>
+            <span><strong>潮汕味道</strong> 牛肉丸 · 粿粉</span>
+        </div>
+        <div class="note-for-image">
+            <i class="fas fa-image"></i> 这里可以放一张潮汕特色图片 (例如牛肉丸/粿粉) —— 预留位置
+        </div>
+    </div>
+    <script>
+        (function() {
+            const titleEl = document.getElementById('typewriter');
+            const fullText = '个人简介';
+            let index = 0;
+            titleEl.textContent = '';
+            function typeNextChar() {
+                if (index < fullText.length) {
+                    titleEl.textContent += fullText.charAt(index);
+                    index++;
+                    setTimeout(typeNextChar, 150);
+                }
+            }
+            window.addEventListener('load', function() {
+                setTimeout(typeNextChar, 300);
+            });
+            const card = document.getElementById('profileCard');
+            let shakeTimer = null;
+            function triggerShake() {
+                if (card) {
+                    card.classList.remove('shake');
+                    void card.offsetWidth;
+                    card.classList.add('shake');
+                    if (shakeTimer) clearTimeout(shakeTimer);
+                    shakeTimer = setTimeout(() => {
+                        card.classList.remove('shake');
+                    }, 400);
+                }
+            }
+            document.addEventListener('click', function(e) {
+                triggerShake();
+            });
+        })();
+    </script>
+</body>
+</html>
